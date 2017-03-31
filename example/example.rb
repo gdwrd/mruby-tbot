@@ -5,10 +5,9 @@ bot.get_bot_data    # return bot info
 bot.response        # last request response
 
 bot.messages do |msg|
-  msg.class
-  #=> Hash
+  msg.class # => Hash
 
-  msg
+  puts msg
   # => {
   #      "message_id": 1,
   #      "from": {
@@ -35,5 +34,11 @@ bot.messages do |msg|
   #      ]
   #    }
 
-  bot.send(msg, 'text')
+  # custom keyboard for Reply Markup
+  keyboard = [
+    ['Hello!', 'Bye!'],
+    ['Exit', 'Docs']
+  ] #=> Array
+
+  bot.send(msg, 'text message', keyboard) # => Hash response
 end
