@@ -1,17 +1,20 @@
-# mruby-tbot   [![Build Status](https://travis-ci.org/nsheremet/mruby-tbot.svg?branch=master)](https://travis-ci.org/nsheremet/mruby-tbot)
-gem class
-## install by mrbgems
+# mruby-tbot   
+
+[![Build Status](https://travis-ci.org/nsheremet/mruby-tbot.svg?branch=master)](https://travis-ci.org/nsheremet/mruby-tbot)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/nsheremet/mruby-tbot/blob/master/LICENSE)
+[![MRuby Version](https://img.shields.io/badge/mruby-v1.2.0-green.svg)](https://github.com/mruby/mruby)
+
+MRuby wrapper for [Telegram's Bot API](https://core.telegram.org/bots/api).
+
+## Install by mrbgems
 - add conf.gem line to `build_config.rb`
 
 ```ruby
 MRuby::Build.new do |conf|
-
-    # ... (snip) ...
-
-    conf.gem :github => 'nsheremet/mruby-tbot'
+  conf.gem :github => 'nsheremet/mruby-tbot'
 end
 ```
-## example
+## Example
 ```ruby
 bot = TBot::Bot.new(telegram_token)
 
