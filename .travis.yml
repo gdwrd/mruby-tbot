@@ -3,9 +3,9 @@ compiler:
   - gcc
   - clang
 before_install:
-    - sudo apt-get -qq update
+  - sudo apt-get -qq update
 install:
-    - sudo apt-get -qq install rake bison git gperf
+  - sudo apt-get -qq install rake bison git gperf
 before_script:
   - cd ../
   - git clone https://github.com/mruby/mruby.git
@@ -13,3 +13,6 @@ before_script:
   - cp -fp ../mruby-tbot/.travis_build_config.rb build_config.rb
 script:
   - make all test
+env:
+  global:
+    secure: IcCtZJuy5KZxwePo+X8walAksU8UygmZf3CQddAh7fJC7+n7FXy/cDwXOLhWhG1d92GV16fLLohsI2VllGC97sZi2Iia9bTpB9qWRKHACt24dkRTbM+xiG97yTVJzQhv6YpjNDmQHTqNcBgz6oNjoOPCM6gnE5JtXYKyqfSLDxrKgxNf4ixx01VOFbMcU5TDJo7IygQ4g5OYdW6q/3CSRstYKl09DYt31p6Xud+glKKTwCbyxDFiBIOJ08ERT3vK8DMY2hCrXnRzJWNtYlal5tjB/K9eMy6gKRqkxZ4CcL9AQ7BQVkZcEBysgcty3vLxBEkgxysE7j2pkQMJ/26ncWSyrLEItTfhCyZ3b0tHCjOiV/It2pgJ8BVT+AdVNbk86pl16HLiKNqfW42lh2EL0PqLNbzIaJZggZNfn3HbymZPDT8KA33BlImaSLowxhqYVKcwd8oK5TTT04+5vyMiAdqD3TsHq1b5pnuCtTVdVnS8hLHFID9abXiAZDTnDIxc6GmiCLgnCdULyAPWfrbzlsevd8pDufkSOQBFwKdmbHLkf7ElwuJ72ruMmz6wJRRIOccs7DgVqQOCjY/iuzS3bkhOylE+4zYtY3BF84O/RMhCNyXVsD5XrV40Gw5VPcR18q+icZnxqaXqH7kOpt4jqyxvKGFZJlhNbQ5ES0LG2RA=
