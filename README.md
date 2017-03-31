@@ -52,6 +52,8 @@ bot.messages do |msg|
   #        }
   #      ]
   #    }
+
+  bot.send(msg, 'text message')
 end
 ```
 
