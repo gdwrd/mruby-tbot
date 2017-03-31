@@ -36,6 +36,10 @@ class TBot::Bot
     end
   end
 
+  def send(msg, text)
+    @response = get_response(api_send_url(msg['chat']['id'], text))
+  end
+
 private
 
   def get_response(url)
@@ -43,11 +47,19 @@ private
   end
 
   def api_me_url
-    url = API_BOT_URL + @token + "/getMe"
+    base_url + "/getMe"
   end
 
   def api_updates_url
-    url = API_BOT_URL + @token + "/getUpdates?offset=" + @offset.to_s
+    base_url + "/getUpdates?offset=" + @offset.to_s
+  end
+
+  def api_send_url(id, text)
+    base_url + "/sendMessage?chat_id=#{id}&text=#{text}"
+  end
+
+  def base_url
+    API_BOT_URL + @token
   end
 
   def set_offset(value)

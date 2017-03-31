@@ -37,3 +37,12 @@ assert("bot messages required block") do
 
   assert_equal e.class, ArgumentError
 end
+
+assert("bot send messages") do
+  bot = TBot::Bot.new(TOKEN)
+  response = bot.send({'chat' => {'id' => 1}}, 'test')
+  data = JSON::parse(response.body)
+
+  assert_equal data["ok"], false
+  assert_equal data['error_code'], 400
+end
