@@ -58,7 +58,7 @@ bot.messages do |msg|
     ['Exit', 'Docs']
   ] #=> Array
 
-  bot.send(msg, 'text message', keyboard) # => Hash response
+  bot.send_message(msg, 'text message', keyboard) # => Hash response
 end
 ```
 

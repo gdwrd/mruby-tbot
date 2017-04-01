@@ -40,7 +40,7 @@ end
 
 assert("bot send messages") do
   bot = TBot::Bot.new(TOKEN)
-  response = bot.send({'chat' => {'id' => 1}}, 'test')
+  response = bot.send_message({'chat' => {'id' => 1}}, 'test')
   data = JSON::parse(response.body)
 
   assert_equal data["ok"], false
