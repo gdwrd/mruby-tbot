@@ -2,7 +2,7 @@ module TBot
   class Bot
     include ::Sender
 
-    attr_accessor :token, :http
+    attr_accessor :token
 
     API_BOT_URL = "https://api.telegram.org/bot"
 
@@ -11,7 +11,6 @@ module TBot
         raise ArgumentError
       else
         @token = token
-        @http = HttpRequest.new
         @offset = TBot::Helper.get_offset
       end
     end
@@ -42,7 +41,7 @@ module TBot
   private
 
     def get_response(url)
-      @http.get(url)
+      HTTP.new(url).get
     end
 
     def api_me_url
