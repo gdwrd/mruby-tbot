@@ -25,7 +25,7 @@ bot.response        # last request response
 bot.messages do |msg|
   msg.class # => Hash
 
-  puts msg  
+  puts msg
   # => {
   #      "message_id": 1,
   #      "from": {
@@ -58,10 +58,64 @@ bot.messages do |msg|
     ['Exit', 'Docs']
   ] #=> Array
 
-  bot.send(msg, 'text message', keyboard) # => Hash response
+  # ReplyKeyboardMarkup
+  reply_markup = {
+    keyboard: keyboard,
+    resize_keyboard: true,
+    one_time_keyboard: true,
+    selective: true
+  }
+
+  # Send Message
+  bot.message(msg, { text: 'text message', reply_markup: reply_markup }) # => Hash response
 end
 ```
 
+### Send Document
+```ruby
+bot.document(message, { document: File.open('document.doc','rb') })
+```
+
+### Send Photo
+```ruby
+bot.photo(message, { photo: File.open('photo.jpeg','rb') })
+```
+
+### Send Sticker
+```ruby
+bot.sticker(message, { sticker: File.open('sticker.png','rb') })
+```
+
+### Send Audio
+```ruby
+bot.audio(message, { sticker: File.open('audio.mp3','rb') })
+```
+
+### Send Voice
+```ruby
+bot.voice(message, { sticker: File.open('voice.mp3','rb') })
+```
+
+### Send location
+```ruby
+bot.location(message, { latitude: 54.44, longitude: 80.0 })
+```
+
+### Send Venue
+```ruby
+bot.venue(message, { latitude: 50.00, longitude: 80.0, title: "Name", address: "Address" })
+```
+
+### Send Contact
+```ruby
+bot.contact(message, { phone_number: "+123456789010", first_name: "Name", last_name: "Test" })
+```
+
+### Send Chat Action
+```ruby
+bot.chat_action(message, { action: "typing" })
+```
+
 ## License
-under the MIT License:
+Under the MIT License:
 - see LICENSE file

@@ -21,7 +21,6 @@ assert("bot has access to the attributes") do
   bot = TBot::Bot.new(TOKEN)
 
   assert_equal bot.token, TOKEN
-  assert_equal bot.http.class, HttpRequest
 end
 
 assert("bot return response") do
@@ -40,7 +39,7 @@ end
 
 assert("bot send messages") do
   bot = TBot::Bot.new(TOKEN)
-  response = bot.send({'chat' => {'id' => 1}}, 'test')
+  response = bot.message({'chat' => {'id' => 1}}, {text: 'test'})
   data = JSON::parse(response.body)
 
   assert_equal data["ok"], false
