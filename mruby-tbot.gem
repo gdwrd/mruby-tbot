@@ -1,5 +1,5 @@
 name: mruby-tbot
-description: gem class
+description: MRuby wrapper for Telegram Bot API
 author: Nazarii Sheremet
 website: https://github.com/nsheremet/mruby-tbot
 protocol: git
