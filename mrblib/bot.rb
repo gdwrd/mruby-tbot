@@ -16,7 +16,11 @@ module TBot
     end
 
     def get_bot_data
-      @response = get_response(api_me_url)
+      @response = get_response(api_url(:me))
+    end
+
+    def get_file(id)
+      @response = get_response(api_url(:file) + id)
     end
 
     def messages(&block)
@@ -40,12 +44,9 @@ module TBot
 
   private
 
+
     def get_response(url)
       HTTP.new(url).get
-    end
-
-    def api_me_url
-      base_url + "/getMe"
     end
 
     def api_updates_url

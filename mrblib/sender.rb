@@ -83,7 +83,9 @@ private
       location: "/sendLocation",
       venue: "/sendVenue",
       contact: "/sendContact",
-      chat_action: "/sendChatAction"
+      chat_action: "/sendChatAction",
+      me: "/getMe",
+      file: "/getFile"
     }
 
     base_url + urls[key]
